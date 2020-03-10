@@ -1,0 +1,67 @@
+<?php
+	session_start();
+?>
+
+<?php
+  $servername = "127.0.0.1";
+  $username = "root";
+  $password = "1470";
+  $dbname = "test_database";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+  $ID = $_SESSION["ID"];
+  $publishID = $_GET['publishID'];
+
+  $publishName = $content = "";
+
+  $sql = "SELECT publishName,content FROM publish WHERE publishID = '$publishID'";
+
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);	  
+
+  echo "<!DOCTYPE html>";
+  echo "<html>";
+  echo "<head>";
+  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"braindrain.css\">";
+
+  echo "</head>";
+  echo "<body style=\"background-color:#ccccb3;\">";
+
+  echo "<h1 style=\"text-align:center; font-size:300%; font-color:331a00; font-family:courier\">";
+    echo "Welcome to mind drain";
+  echo "</h1>";
+
+  echo "<p id=\"demo\"  style=\"text-align:center; font-size:90%\">";
+  echo "please keep in mind that 1000 is the maximum words allowed</p>";
+
+  echo "<div class=\"naming\">";
+  echo "<form method=\"post\" action=\"braindrainedit.php?publishID=".$publishID."\" id=\"textbox\">";
+  echo "<input type=\"text\" name=\"PUBLISHNAME\" value=\"".$row["publishName"]."\"  autofocus style=\"font-size:100%; width: 11%;\" ><br>";
+  echo "</form>"; 
+
+  echo "</div>";
+
+  echo "<div class=\"texta\">";
+    echo "<textarea name=\"CONTENT\" maxlength=\"1000\" autofocus style=\"font-size:120%; width: 80%; min-height: 200px;\">".$row["content"];
+  echo "</textarea></div>";
+
+
+  echo "<div class=\"butt\">";
+  echo "<button type=\"submit\" form=\"textbox\" value=\"Submit\" autofocus style=\"height:100%; width:100%;\">";
+  echo "Submit";
+  echo "</button></div>";
+
+
+
+
+
+  echo "</body>";
+  echo "</html>";
+
+ $conn->close(); 

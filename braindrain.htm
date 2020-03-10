@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="braindrain.css">
+
+<script type="text/javascript">
+  	function validate(){
+  		var x = document.forms["myform"]["PUBLISHNAME"].value;
+  		if(x==""){
+  			alert("Publish Name cannot be empty");
+  			return false;
+  		}
+  		var x = document.forms["myform"]["CONTENT"].value;
+  		if(x==""){
+  			alert("Content cannot be empty");
+  			return false;
+        u
+  		}
+  	}
+  </script>
+
+</head>
+<body style="background-color:#ccccb3;">
+
+<h1 style="text-align:center; font-size:300%; font-color:331a00; font-family:courier" >Welcome to mind drain</h1>
+
+<p id="demo"  style="text-align:center; font-size:90%">please keep in mind that 65000 is the maximum words allowed</p>
+
+<div class="naming">
+<form name="myform" method="post" action="braindrain.php" onsubmit="return validate()" id="textbox">
+  <input type="text" name="PUBLISHNAME" placeholder="name of the this work"  autofocus style="font-size:100%; width: 11%;" ><br>
+</form> 
+
+</div>
+
+<div class="texta">
+<textarea  name="CONTENT" form="textbox" maxlength="65000" placeholder="Write something here" autofocus style="font-size:120%; width: 80%; min-height: 200px;"></textarea>
+</div>
+
+<div class="butt">
+<button type="submit" form="textbox" value="Submit" autofocus style="height:100%; width:100%;">Submit</button></div>
+
+
+</body>
+</html>
+

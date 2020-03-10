@@ -1,0 +1,37 @@
+body{
+    background-image:url("./login.png");
+    background-repeat: no-repeat;
+    width:1200px;
+    margin:0 auto;
+}
+
+form{
+    position: absolute;
+    top: 25%;
+    right: 20%;
+}
+
+input {
+    height: 40px;
+    width: 400px;
+    padding: 0 20px;
+}
+
+#createaccount{
+    border: 1px solid #223445;
+    border-radius: 18px; 
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; 
+    display:inline-block;
+    width: 20em;
+    height: 3em;
+    -webkit-font-smoothing: antialiased;
+    background: green; 
+    color:white; 
+    font-size: 20px
+}
+
+a{
+    text-decoration: none;
+    color: green;
+}

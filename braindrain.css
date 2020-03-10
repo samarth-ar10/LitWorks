@@ -1,0 +1,26 @@
+div.texta {
+    
+
+    width: 80%;
+    border: 60% solid white;
+    padding: 0px;
+    margin-top: 1%;
+  margin-left: 18%;
+  margin-right: 18%;
+  resize: both;
+}
+div.naming{
+  width: 80%;
+    border: 60% solid white;
+    padding: 0px;
+    margin-top: 3%;
+  margin-right: 45%;
+  margin-left: 45%;
+  resize:both;
+}
+div.butt{
+  
+  margin-right:45%;
+  margin-left:45%;
+  resize: both;
+}
