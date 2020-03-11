@@ -3,7 +3,7 @@
   session_start();
 ?>
 <?php
-$servername = "127.0.0.1";
+$servername = "fenrir-so.tech";
 $username = "root";
 $password = "1470";
 $dbname = "test_database";
